@@ -1,43 +1,68 @@
-# Forecasting-Project
-Sales Forecasting Using Machine Learning
+This repository contains two complete projects addressing key business challenges in retail demand forecasting and Arabic product name matching.
 
-This project focuses on forecasting daily product sales for the next 30 days, supporting inventory management and demand planning for retail businesses.
+✅ Task 1: Sales Forecasting System
+Forecast daily product sales for the next 30 days using machine learning and deep learning models to support inventory and demand planning decisions.
 
-📊 Project Overview
-We applied a combination of:
+Key Features:
 
-XGBoost and LightGBM (Gradient Boosting Decision Trees)
+Models: XGBoost, LightGBM, LSTM
 
-LSTM (Long Short-Term Memory Recurrent Neural Networks)
+Data: 12 months of historical sales per product
 
-These models are optimized for capturing short-term trends, seasonality, and temporal dependencies in sales data.
+Feature Engineering: Lag features, rolling statistics, calendar features, days since last sale
 
-📁 Dataset
-Input Data: Daily sales quantity per product from ~12 months of historical sales records.
+Evaluation Metrics: MAPE, RMSE, WMAPE
 
-Assumptions: Only active products included (≥10 units sold in the last 90 days), no external factors (e.g., prices, promotions).
+Output: 30-day product sales forecasts in CSV format
 
-🛠️ Feature Engineering
-Lag Features (1-day, 7-day)
+📈 Objective: Improve short-term demand planning for retail operations.
 
-Rolling Statistics (7-day, 14-day means, standard deviation)
+✅ Task 2: Arabic Product Matching System
+A production-grade system for matching noisy Arabic product inputs to a structured product database (~30K products) with high accuracy and speed.
 
-Calendar Features (day of week, month, weekends)
+Key Features:
 
-Days Since Last Sale
+Modular NLP Pipeline:
 
-🧪 Model Evaluation
-Models are evaluated using:
+Text Cleaning & Normalization
 
-MAPE, RMSE, and WMAPE
+Named Entity Recognition (NER) using spaCy + Regex
 
-🚀 Potential Improvements
-Longer time window (24+ months)
+Embedding with Sentence Transformers (MiniLM)
 
-External data (holidays, promotions, prices)
+Vector Similarity Search with FAISS / Qdrant / Pinecone
 
-Hierarchical modeling, advanced time-series models (Prophet, TCNs), and uncertainty estimation.
+Re-Ranking with domain rules and LLM-based re-ranking (Gemini or GPT-4)
 
-✅ Status: Completed
-📌 Deliverables: Trained models, feature engineering pipeline, performance comparison, and forecasts exported to CSV.
+Fast JSON API response via Flask/FastAPI
+
+Scalable, production-ready architecture
+
+Supports batch input, real-time search, and explainable match scores
+
+🛍️ Objective: Deliver robust Arabic product matching for e-commerce, healthcare, and retail applications.
+
+🚀 Tech Stack:
+Python 3.x, Flask / FastAPI
+
+XGBoost, LightGBM, LSTM
+
+spaCy, Regex, Sentence Transformers (MiniLM)
+
+FAISS, Qdrant, Pinecone
+
+LLMs: GPT-4, Gemini
+
+Evaluation: MAPE, RMSE, WMAPE, Match Scores
+
+🌟 Potential Future Enhancements:
+📊 Forecasting: External features (prices, holidays), hierarchical models, uncertainty estimation
+
+🧠 Matching: Spell correction, domain lexicon, advanced re-ranking, feedback loops, monitoring dashboards
+
+🎁 Status: Research-grade completed prototypes ready for scaling and production.
+
+# Arabic Product Matching System
+
+![Arabic Product Matching System Design](System_Design_Task_2.png)
 
